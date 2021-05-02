@@ -1,0 +1,47 @@
+.signInForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+input.signin{
+    margin-bottom: 2rem;
+    width: 525px;
+    border: 1px solid grey;
+    border-radius: 1.6rem ;
+    padding: 1rem;
+    outline: none;
+    font-family: 'Poppins';
+    
+}
+
+input::placeholder{
+    font-family: 'Poppins';
+}
+
+button.signin{
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1.8rem;
+    width: 250px;
+    font-family: 'Poppins';
+    background-color: rgb(101, 101, 245);
+    color: white;
+    font-size: 1.1rem;
+    transition: all .3s;
+    border: none;
+}
+
+button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
