@@ -7,7 +7,6 @@ const VerifyEmail = () =>{
 
     const onInputChange = (event) =>{
         const target = event.target;
-        const name = target.name;
         const value = target.value
 
         setOtp(value);
