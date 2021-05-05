@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Controls.css'
+import {Link} from 'react-router-dom'
 
 
 const Controls = () =>{
@@ -34,9 +35,11 @@ const Controls = () =>{
             </div>
             </div>
             <div id="cr-li">
-                <div>
-                    Log in
-                </div>
+                <Link to='/login'>
+                    <div>
+                        Log in
+                    </div>
+                </Link>
                 <div>
                     <button id="cr">
                         Create request

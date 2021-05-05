@@ -1,5 +1,6 @@
 import React from 'react'
 import './LogIn.css'
+import {Link} from 'react-router-dom'
 
 
 class LogIn extends React.Component{
@@ -35,10 +36,13 @@ render(){
     return(
 
         <div className="LogInForm">
-            <h1>Sign in</h1>
+            <h1>Log in</h1>
             <input type="text" name="email" id="emailInp" onChange={this.onInputChange} placeholder="Email" className="login"/>
             <input type="password" name="password" id="passInp" onChange={this.onInputChange}placeholder="Password" className="login"/>
-            <button onClick={this.onSubmitClick} className="login">submit</button>
+            <button onClick={this.onSubmitClick} className="login">submit</button><br/>
+            <div>
+                Don't have an account? <Link to='/signup'>Register</Link>
+            </div>
         </div>
 
 

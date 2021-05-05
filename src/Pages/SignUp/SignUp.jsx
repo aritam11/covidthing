@@ -1,5 +1,6 @@
 import React from 'react'
 import './SignUp.css'
+import {Link} from 'react-router-dom'
 
 
 class SignUp extends React.Component{
@@ -34,8 +35,8 @@ onSubmitClick = () =>{
 render(){
     return(
 
-        <div className="signInForm">
-            <h1>Sign in</h1>
+        <div className="signUpForm">
+            <h1>Sign up</h1>
             <input type="text" name="name" id="nameInp"  onChange={this.onInputChange} placeholder="Name" className="signin"/>
             <input type="text" name="phNo" id="phNoInp" onChange={this.onInputChange} placeholder="Phone no." className="signin"/>
             <input type="text" name="altPhNo" id="altPhNo" onChange={this.onInputChange} placeholder="Alternate phone no." className="signin"/>
@@ -43,6 +44,10 @@ render(){
             <input type="password" name="password" id="passInp" onChange={this.onInputChange}placeholder="Password" className="signin"/>
             <input type="password" name="confPass" id="confPassInp" onChange={this.onInputChange} placeholder="Confirm Password" className="signin"/>
             <button onClick={this.onSubmitClick} className="signin">submit</button>
+            <br/>
+            <div>
+                Don't have an account? <Link to='/login'>Register</Link>
+            </div>
         </div>
 
 
