@@ -8,9 +8,8 @@ const VerifyEmail = () =>{
     const onInputChange = (event) =>{
         const target = event.target;
         const value = target.value
-
         setOtp(value);
-        console.log(otp);
+        console.log(value,otp)
     }
 
     const onOtpSubmit = () =>{

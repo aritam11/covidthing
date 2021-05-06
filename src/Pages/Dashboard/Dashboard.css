@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.filter {
+  width: 450px;
+  height: 670px;
+  margin: 30px 90px;
+  border-radius: 20px;
+  box-shadow: 3px 16px 25px -7px rgba(0, 0, 0, 0.35);
+}
+.content {
+  padding: 20px;
+}
+.title {
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: 350;
+  text-align: center;
+}
+
+.name {
+  padding: 5px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-left: 20px;
+}
+.type {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pos,
+.neg {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.group {
+  padding: 5px;
+}
+.exact {
+  margin-right: 10px;
+}
+.exact:hover {
+  cursor: pointer;
+}
+label {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.gender {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.diff {
+  display: flex;
+  flex-direction: column;
+}
+.gen {
+  padding: 10px;
+}
+.gentype {
+  margin-right: 5px;
+}
+.age {
+  margin-top: 20px;
+}
+.age .name {
+  margin-right: 20px;
+}
+.age_range {
+  display: flex;
+}
+.limit {
+  width: 40px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  padding: 0px;
+  height: 30px;
+}
