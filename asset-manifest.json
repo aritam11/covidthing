@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/covidthingy/static/css/main.4a776626.chunk.css",
+    "main.js": "/covidthingy/static/js/main.2f06b2d8.chunk.js",
+    "main.js.map": "/covidthingy/static/js/main.2f06b2d8.chunk.js.map",
+    "runtime-main.js": "/covidthingy/static/js/runtime-main.a6ee5317.js",
+    "runtime-main.js.map": "/covidthingy/static/js/runtime-main.a6ee5317.js.map",
+    "static/js/2.0a02da0f.chunk.js": "/covidthingy/static/js/2.0a02da0f.chunk.js",
+    "static/js/2.0a02da0f.chunk.js.map": "/covidthingy/static/js/2.0a02da0f.chunk.js.map",
+    "index.html": "/covidthingy/index.html",
+    "static/css/main.4a776626.chunk.css.map": "/covidthingy/static/css/main.4a776626.chunk.css.map",
+    "static/js/2.0a02da0f.chunk.js.LICENSE.txt": "/covidthingy/static/js/2.0a02da0f.chunk.js.LICENSE.txt",
+    "static/media/home.36d73bd9.svg": "/covidthingy/static/media/home.36d73bd9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a6ee5317.js",
+    "static/js/2.0a02da0f.chunk.js",
+    "static/css/main.4a776626.chunk.css",
+    "static/js/main.2f06b2d8.chunk.js"
+  ]
+}
