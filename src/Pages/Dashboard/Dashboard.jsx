@@ -13,7 +13,7 @@ const Dashboard = () =>{
                 <div className="content">
                     <h2 className="title">Additional Filters</h2>
                     <div classname="bloody">
-                        <p class="name">Blood group</p>
+                        <p class="name">Blood group :</p>
                         <div className="type">
                             <span className="pos">
                                 <span class="group">
@@ -74,9 +74,9 @@ const Dashboard = () =>{
                     <div className="age">
                         <span className="age_range">
                             <p className="name">Age : &emsp;&emsp;between</p>
-                            <input type="text" class="limit"/>
-                            <p class="name">to</p>
-                            <input type="text" class="limit"/>
+                            <input type="text" className="limit" maxLength="3"/>
+                            <p className="name">to</p>
+                            <input type="text" className="limit" maxLength="3"/>
                         </span>
                     </div>
                 </div> 
