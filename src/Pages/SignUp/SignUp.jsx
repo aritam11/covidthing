@@ -46,7 +46,7 @@ render(){
             <button onClick={this.onSubmitClick} className="signin">submit</button>
             <br/>
             <div>
-                Don't have an account? <Link to='/login'>Register</Link>
+                Already have an account? <Link to='/login'>Login</Link>
             </div>
         </div>
 

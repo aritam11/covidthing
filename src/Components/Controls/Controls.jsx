@@ -24,7 +24,7 @@ const Controls = () =>{
                 <option value="medicines">medicines</option>
             </select>
             <div id="range-div">
-                <label htmlFor="range">Range:</label>
+                <label id="rangetxt" htmlFor="range">Range:</label>
                 <input type="range" min="0" max="100" step="10" id="range" onChange={rangeVal}/>
                 <span>
                     {
