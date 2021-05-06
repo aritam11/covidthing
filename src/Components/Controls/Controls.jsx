@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const Controls = () =>{
 
-    const [rng, setRng] = useState(0);
+    const [rng, setRng] = useState(50);
 
 
     const rangeVal = (event) =>{
@@ -30,7 +30,7 @@ const Controls = () =>{
                     {
                         rng
 
-                    }
+                    }km
                 </span>
             </div>
             </div>
