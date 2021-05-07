@@ -1,6 +1,7 @@
 import React from 'react'
 import './SignUp.css'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 
 class SignUp extends React.Component{
@@ -26,13 +27,25 @@ onInputChange = (event)=>{
 
 }
 
-onSubmitClick = () =>{
-    console.log(this.state);
+
+
+onSubmitClick = (e) =>{
+   fetch('http://localhost:3000/signup',{
+       method:'POST',
+       headers:{'Content-type':'application/json'},
+       body:JSON.stringify(this.state)
+   })
+   .then(response => response.json())
+   .then(data => console.log(data));
 }
 
 
 
+
+
+
 render(){
+    
     return(
 
         <div className="signUpForm">

@@ -6,10 +6,13 @@ import Dashboard from './Pages/Dashboard/Dashboard'
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
+const basename = "covidthing"
 function App() {
+  
   return (
     <div className="App">
-          <Router basename={window.location.pathname || ''}>
+      
+          <Router basename={basename || 'covidthing'}>
             <Route path="/" exact component={Dashboard}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/login" component={LogIn}/>
