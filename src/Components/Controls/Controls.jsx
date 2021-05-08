@@ -1,17 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Controls.css'
 import {Link} from 'react-router-dom'
 
 
 const Controls = () =>{
 
-    const [rng, setRng] = useState(50);
+    const [rng, setRng] = useState(50+"km");
 
 
     const rangeVal = (event) =>{
-        var i = event.target.value;
-        setRng(i);
+        var i = parseInt(event.target.value) + 5;
+        setRng(i + "km");
     }
+
+    useEffect(() =>{
+        if(rng == "105km"){
+            setRng("All India")
+        }
+    },[rng])
 
     return(
         <div>
@@ -28,9 +34,12 @@ const Controls = () =>{
                 <input type="range" min="0" max="100" step="10" id="range" onChange={rangeVal}/>
                 <span>
                     {
-                        rng
+                        
+                            rng
+                        
+               
 
-                    }km
+                    }
                 </span>
             </div>
             </div>
@@ -40,11 +49,13 @@ const Controls = () =>{
                         Log in
                     </div>
                 </Link>
-                <div>
-                    <button id="cr">
-                        Create request
-                    </button>
-                </div>
+                <Link to='/createRequest'>
+                    <div>
+                        <button id="cr">
+                            Create request
+                        </button>
+                    </div>
+                </Link>
             </div>
 
             

@@ -1,5 +1,5 @@
 import React from 'react';
-import home from '../../assets/images/home.svg'
+import {Link} from 'react-router-dom'
 import './Menu.css'
 
 
@@ -7,12 +7,16 @@ const Menu = () =>{
     return(
         <div className="menu">
             <ul className="menuList">
+                
+                <Link to = "/">
                 <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="38.024" height="32.32" viewBox="0 0 38.024 32.32">
                     <path id="Path_4" data-name="Path 4" d="M21.012,3,2,20.111H7.7V35.32h8.867V23.913h8.342V35.32H34.32V20.111h5.7Z" transform="translate(-2 -3)" fill="#707070"/>
                 </svg>
 
                 </li>
+                </Link>
+                
                 <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="28.334" height="28.334" viewBox="0 0 28.334 28.334">
                   <path id="Exclusion_2" data-name="Exclusion 2" d="M-1935.833-1346.666A14.183,14.183,0,0,1-1950-1360.833,14.183,14.183,0,0,1-1935.833-1375a14.183,14.183,0,0,1,14.167,14.167A14.183,14.183,0,0,1-1935.833-1346.666Zm-1.417-15.583v8.5h2.833v-8.5Zm0-5.667v2.833h2.833v-2.833Z" transform="translate(1950 1375)" fill="#707070"/>
