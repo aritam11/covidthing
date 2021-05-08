@@ -1,0 +1,53 @@
+.oxygen{
+    display: flex;
+    align-items: center;
+    width : 400px;
+    height : auto;
+    margin : 60px auto;
+    border-radius: 20px;
+    box-shadow: 3px 3px 15px -7px rgba(0, 0, 0, 0.75);
+}
+.oxygenReq{
+    width : 100%;
+    display : flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contain{
+    margin: 10px;
+}
+
+input.Reqoxygen{
+    margin-bottom: 2rem;
+    width: 90%;
+    border: 1px solid rgb(104, 104, 104);
+    border-radius: 1.6rem;
+    padding: .5rem;
+    outline: none;
+    font-family: 'Poppins';
+}
+
+textarea.Reqoxygen{
+    margin-bottom: 2rem;
+    width: 90%;
+    border: 1px solid rgb(104, 104, 104);
+    border-radius: 1.6rem;
+    padding: .5rem;
+    outline: none;
+    font-family: 'Poppins';
+    resize: vertical;
+    
+}
+.ReqSubmit{
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 1.8rem;
+    width: 250px;
+    font-family: 'Poppins';
+    background-color: rgb(101, 101, 245);
+    color: white;
+    font-size: 1.1rem;
+    transition: all .3s;
+}

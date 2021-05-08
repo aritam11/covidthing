@@ -1,7 +1,7 @@
 import React from 'react'
 import './SignUp.css'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
+import Menu from '../../Components/Menu/menu';
 
 
 class SignUp extends React.Component{
@@ -47,7 +47,8 @@ onSubmitClick = (e) =>{
 render(){
     
     return(
-
+        <>
+        <Menu/>
         <div className="signUpForm">
             <h1>Sign up</h1>
             <input type="text" name="name" id="nameInp"  onChange={this.onInputChange} placeholder="Name" className="signin"/>
@@ -62,7 +63,7 @@ render(){
                 Already have an account? <Link to='/login'>Login</Link>
             </div>
         </div>
-
+        </>
 
         );
     }
