@@ -3,10 +3,51 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.iconFilter{
+    position :absolute;
+    right: 0;
+    margin : 10px;
+}
+
+.ReactModal__Overlay {
+  transform: scale(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.Modal.defaultStyles{
+  padding: 0;
+}
+
+.closeFilter{
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  margin: 10px 20px 0px 0px;
+  cursor: pointer;
+}
+
+.ReactModal__Content{
+  width: 454px;
+  height: 675px;
+  margin: auto;
+  padding: 0;
+}
+
+.ReactModal__Overlay--after-open{
+  transform: scale(1);
+}
+
+.ReactModal__Overlay--before-close{
+  transform: scale(0);
+}
+
+
 .filter {
   width: 450px;
   height: 670px;
-  margin: 30px 90px;
+  margin: auto;
   border-radius: 20px;
   box-shadow: 3px 3px 15px -7px rgba(0, 0, 0, 0.35);
 }
