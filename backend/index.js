@@ -44,10 +44,10 @@ async function login(emailId){
 
 app.post('/signup',async(req,res)=>{
     console.log(req.body);
-    var email = req.body.email;
     users.findOne({email:VerifyEmail})
     .then(useremail =>{
-        if(!useremail){
+        console.log(useremail)
+        if(useremail){
             throw new Error('user already exists')
         }
     })
@@ -55,7 +55,7 @@ app.post('/signup',async(req,res)=>{
         var data = {...req.body,verified:false}
         login(req.body.email);
     
-        users.insertOne(data,(err,collection)=>{
+        users.insertOne(data,(err)=>{
                     if(err){
                         throw err;
                     }
