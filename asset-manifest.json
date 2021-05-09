@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/covidthing/static/css/main.356f67d2.chunk.css",
-    "main.js": "/covidthing/static/js/main.8d307948.chunk.js",
-    "main.js.map": "/covidthing/static/js/main.8d307948.chunk.js.map",
+    "main.css": "/covidthing/static/css/main.afc8be4a.chunk.css",
+    "main.js": "/covidthing/static/js/main.b065146c.chunk.js",
+    "main.js.map": "/covidthing/static/js/main.b065146c.chunk.js.map",
     "runtime-main.js": "/covidthing/static/js/runtime-main.a7574603.js",
     "runtime-main.js.map": "/covidthing/static/js/runtime-main.a7574603.js.map",
-    "static/js/2.6f5449ab.chunk.js": "/covidthing/static/js/2.6f5449ab.chunk.js",
-    "static/js/2.6f5449ab.chunk.js.map": "/covidthing/static/js/2.6f5449ab.chunk.js.map",
+    "static/js/2.e366599d.chunk.js": "/covidthing/static/js/2.e366599d.chunk.js",
+    "static/js/2.e366599d.chunk.js.map": "/covidthing/static/js/2.e366599d.chunk.js.map",
     "index.html": "/covidthing/index.html",
-    "static/css/main.356f67d2.chunk.css.map": "/covidthing/static/css/main.356f67d2.chunk.css.map",
-    "static/js/2.6f5449ab.chunk.js.LICENSE.txt": "/covidthing/static/js/2.6f5449ab.chunk.js.LICENSE.txt"
+    "static/css/main.afc8be4a.chunk.css.map": "/covidthing/static/css/main.afc8be4a.chunk.css.map",
+    "static/js/2.e366599d.chunk.js.LICENSE.txt": "/covidthing/static/js/2.e366599d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a7574603.js",
-    "static/js/2.6f5449ab.chunk.js",
-    "static/css/main.356f67d2.chunk.css",
-    "static/js/main.8d307948.chunk.js"
+    "static/js/2.e366599d.chunk.js",
+    "static/css/main.afc8be4a.chunk.css",
+    "static/js/main.b065146c.chunk.js"
   ]
 }
