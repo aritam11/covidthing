@@ -6,13 +6,36 @@ import Dashboard from './Pages/Dashboard/Dashboard'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import CreateReq from './Pages/CreateReq/CreateReq';
 import Plasma from './Components/Forms/Plasma/Plasma';
+import Cookies from 'universal-cookie';
+import { useEffect, useState } from 'react';
 
 const basename = "covidthing"
+const cookies = new Cookies();
 function App() {
+
+  const [loggedIn,setLoggedIn] = useState(false);
+
+  useEffect(()=>{
+
+    if(cookies.get('loggedIn')){
+      console.log(cookies.get('loggedIn'));
+      setLoggedIn(true);
+    }
+    else{
+      console.log("Not logged in")
+    }
+    
+  },[]);
+
+ const showCookies = () =>{
+
+    console.log(cookies.get('myCat'));
+    
+  }
   
   return (
     <div className="App">
-      
+          <button onClick={showCookies}>show cookies</button>
           <Router basename={basename || 'covidthing'}>
             <Route path="/" exact component={Dashboard}/>
             <Route path="/signup" component={SignUp}/>

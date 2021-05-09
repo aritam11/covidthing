@@ -49,7 +49,8 @@ app.post("/login",async(req,res)=>{
         var pass = req.body.pass;
         const useremail =await users.findOne({email:email});
         if(useremail.password === pass ){
-            res.send({message:"successful login"})
+            res.send({message:"successful login"});
+            console.log(email,"logged in")
 
         }
         else{

@@ -12,43 +12,43 @@ const Dashboard = () =>{
             <div className="filter">
                 <div className="content">
                     <h2 className="title">Additional Filters</h2>
-                    <div classname="bloody">
-                        <p class="name">Blood group :</p>
+                    <div className="bloody">
+                        <p className="name">Blood group :</p>
                         <div className="type">
                             <span className="pos">
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="AB+"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="AB+"/>
                                     <label>AB+</label>
                                 </span>
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="A+"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="A+"/>
                                     <label>A+</label>
                                 </span>
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="B+"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="B+"/>
                                     <label>B+</label>
                                 </span>
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="O+"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="O+"/>
                                     <label>O+</label>
                                 </span>
 
                             </span>
                             <span className="neg">
-                            <span class="group">
-                                    <input type="checkbox" class="exact" value="AB-"/>
+                            <span className="group">
+                                    <input type="checkbox" className="exact" value="AB-"/>
                                     <label>AB-</label>
                                 </span>
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="A-"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="A-"/>
                                     <label>A-</label>
                                 </span>
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="B-"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="B-"/>
                                     <label>B-</label>
                                 </span>
-                                <span class="group">
-                                    <input type="checkbox" class="exact" value="O-"/>
+                                <span className="group">
+                                    <input type="checkbox" className="exact" value="O-"/>
                                     <label>O-</label>
                                 </span>
                             </span>
@@ -56,7 +56,7 @@ const Dashboard = () =>{
                     </div>
                     <div className="gender">
                         <p className="name">Gender :</p>
-                        <div class="diff">
+                        <div className="diff">
                             <span className="gen">
                                 <input type="radio" name="gentype" className="gentype" value="Male"/>
                                 <label>Male</label>

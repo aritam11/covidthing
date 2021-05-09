@@ -34,11 +34,7 @@ const Controls = () =>{
                 <input type="range" min="0" max="100" step="10" id="range" onChange={rangeVal}/>
                 <span>
                     {
-                        
                             rng
-                        
-               
-
                     }
                 </span>
             </div>
