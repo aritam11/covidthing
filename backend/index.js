@@ -1,6 +1,7 @@
 const express =require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const {Auth, LoginCredentials} = require('two-step-auth');
 const app = express();
 
 
@@ -23,11 +24,28 @@ db.once('open',()=>{console.log("connected to db")});
 
 const users = db.collection('users');
 
+var otpSent;
+var VerifyEmail;
+
+async function login(emailId){
+    try {
+        const res = await Auth(emailId, "Covidthing");
+        console.log(res);
+        console.log(res.mail);
+        console.log(res.OTP);
+        otpSent = res.OTP;
+        console.log(res.success);
+        VerifyEmail = res.mail;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 app.post('/signup',(req,res)=>{
     console.log(req.body);
-
-    var data = req.body;
+    var data = {...req.body,verified:false}
+    login(req.body.email);
 
     users.insertOne(data,(err,collection)=>{
                 if(err){
@@ -40,6 +58,25 @@ app.post('/signup',(req,res)=>{
 
 
     })
+})
+
+async function verify(otpParam){
+    if(otpParam == otpSent){
+        
+        await users.findOneAndUpdate({email:VerifyEmail},{ $set: { verified: true } });
+        const useremail =await users.findOne({email:VerifyEmail});
+        console.log(useremail);
+        return {message:'successful verification'}
+    }
+    else{
+        return {message:'failed verification'}
+    }
+}
+
+app.post('/verify',(req,res)=>{
+    var otp = req.body.otp;
+    const verRes = verify(otp);
+    res.send(verRes);
 })
 
 

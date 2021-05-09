@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import Cookies from 'universal-cookie/es6';
 import './VerifyEmail.css'
 
+
+const cookies = new Cookies(); 
 
 const VerifyEmail = () =>{
     const [otp,setOtp] = useState('');
@@ -13,7 +16,24 @@ const VerifyEmail = () =>{
     }
 
     const onOtpSubmit = () =>{
-        console.log(otp);
+        fetch('http://localhost:3000/verify',{
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify({otp:otp})
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.message==='successful verification'){
+                cookies.set('loggedIn','true');
+                window.location.replace('/covidthing');
+            }
+            else{
+                console.log("invalid otp")
+            }
+            console.log(data);
+        })
     }
 
     return(
