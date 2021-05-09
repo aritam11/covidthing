@@ -36,7 +36,11 @@ onSubmitClick = (e) =>{
        body:JSON.stringify(this.state)
    })
    .then(response => response.json())
-   .then(data => console.log(data));
+   .then(data =>{
+       if(data.message==="successfull"){
+           window.location.replace('/covidthing/verify')
+       }
+   });
 }
 
 
