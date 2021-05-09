@@ -42,22 +42,38 @@ async function login(emailId){
 }
 
 
-app.post('/signup',(req,res)=>{
+app.post('/signup',async(req,res)=>{
     console.log(req.body);
-    var data = {...req.body,verified:false}
-    login(req.body.email);
-
-    users.insertOne(data,(err,collection)=>{
-                if(err){
-                    throw err;
-                }
-                else{
-                    console.log("Register successfull");
-                    res.send({"message":"successfull"})
-                }
-
-
+    var email = req.body.email;
+    users.findOne({email:VerifyEmail})
+    .then(useremail =>{
+        if(!useremail){
+            throw new Error('user already exists')
+        }
     })
+    .then(() =>{
+        var data = {...req.body,verified:false}
+        login(req.body.email);
+    
+        users.insertOne(data,(err,collection)=>{
+                    if(err){
+                        throw err;
+                    }
+                    else{
+                        console.log("Register successfull");
+                        res.send({"message":"successfull"})
+                    }
+    
+    
+        });
+    })
+    .catch(err => {
+        console.log('user already exists');
+        res.send({message:'user already exists'});
+    })
+  
+   
+    
 })
 
 async function verify(otpParam){
