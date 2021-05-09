@@ -35,7 +35,6 @@ function App() {
   
   return (
     <div className="App">
-          <button onClick={showCookies}>show cookies</button>
           <Router basename={basename || 'covidthing'}>
             <Route path="/" exact component={Dashboard}/>
             <Route path="/signup" component={SignUp}/>
