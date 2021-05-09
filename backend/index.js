@@ -12,7 +12,7 @@ app.listen(3000, ()=>{
     console.log("connected to server");
 })
 
-mongoose.connect('mongodb://localhost:27017/coviddb',{
+mongoose.connect('mongodb+srv://aritam:Cirkular@cluster0.c6ws0.mongodb.net/test',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
