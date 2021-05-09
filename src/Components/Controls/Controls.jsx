@@ -3,10 +3,12 @@ import './Controls.css'
 import {Link} from 'react-router-dom'
 
 
-const Controls = () =>{
+
+const Controls = (props) =>{
 
     const [rng, setRng] = useState(50+"km");
 
+    
 
     const rangeVal = (event) =>{
         var i = parseInt(event.target.value) + 5;
@@ -24,7 +26,7 @@ const Controls = () =>{
         <div id="topControlBar">
             <div id="control-div">
             <input type="text" id="city" placeholder="search city" />
-            <select name="item" id="item">
+            <select name="item" id="item" onChange={(e)=> props.onChange(e.target.value)}>
                 <option value="plasma">plasma</option>
                 <option value="oxygen">oxygen</option>
                 <option value="medicines">medicines</option>
@@ -61,4 +63,4 @@ const Controls = () =>{
     );
 }
 
-export default Controls;
+export default Controls ;
