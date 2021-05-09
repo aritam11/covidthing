@@ -21,13 +21,15 @@ const db = mongoose.connection;
 db.on('error',()=>{console.log("error")});
 db.once('open',()=>{console.log("connected to db")});
 
+const users = db.collection('users');
+
 
 app.post('/signup',(req,res)=>{
     console.log(req.body);
 
     var data = req.body;
 
-    db.collection('users').insertOne(data,(err,collection)=>{
+    users.insertOne(data,(err,collection)=>{
                 if(err){
                     throw err;
                 }
@@ -39,3 +41,24 @@ app.post('/signup',(req,res)=>{
 
     })
 })
+
+
+app.post("/login",async(req,res)=>{
+    try {
+        var email = req.body.email;
+        var pass = req.body.pass;
+        const useremail =await users.findOne({email:email});
+        if(useremail.password === pass ){
+            res.send({message:"successful login"})
+
+        }
+        else{
+            res.send({message:"password is not matching"});
+        }
+    }
+    catch(error){
+
+        res.status(400).send("invalid details");
+
+    }
+});
