@@ -73,10 +73,10 @@ async function verify(otpParam){
     }
 }
 
-app.post('/verify',(req,res)=>{
+app.post('/verify',async(req,res)=>{
     var otp = req.body.otp;
-    const verRes = verify(otp);
-    res.send(verRes);
+    const verRes = await verify(otp);
+    res.send(verRes)
 })
 
 

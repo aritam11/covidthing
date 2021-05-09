@@ -35,9 +35,9 @@ const VerifyEmail = () =>{
         setOtp(value);
     }
 
-    // const handleClick = () => {
-    //     setOpen(true);
-    //   };
+    const handleClick = () => {
+        setOpen(true);
+      };
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
