@@ -97,22 +97,25 @@ app.post('/verify',async(req,res)=>{
 
 
 app.post("/login",async(req,res)=>{
-    try {
+        console.log(req.body);
         var email = req.body.email;
         var pass = req.body.pass;
-        const useremail =await users.findOne({email:email});
-        if(useremail.password === pass ){
-            res.send({message:"successful login"});
-            console.log(email,"logged in")
+        users.findOne({email:email})
+        .then(useremail =>{
+            console.log(useremail)
+            if(useremail.password === pass ){
+                res.send({message:"successful login"});
+                console.log(email,"logged in")
+    
+            }
+            else{
+                res.send({message:"Invalid credentials"});
+            }
+        })
+    .catch(error=>{
 
-        }
-        else{
-            res.send({message:"password is not matching"});
-        }
-    }
-    catch(error){
+        console.log("user does not exist");
+        res.send({message:'User is not registered'})
 
-        res.status(400).send("invalid details");
-
-    }
+    })
 });

@@ -3,15 +3,24 @@ import './LogIn.css'
 import {Link} from 'react-router-dom'
 import Menu from '../../Components/Menu/menu';
 import Cookies from 'universal-cookie';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
 
 const cookies = new Cookies();
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
 
 class LogIn extends React.Component{
    constructor(props){
        super(props);
        this.state={
            email:'',
-           pass:''
+           pass:'',
+           err:'',
+           open:false
        }
    }
 
@@ -35,11 +44,38 @@ onSubmitClick = () =>{
     })
     .then(response => response.json())
     .then(data => {
-        data.message==="successful login"?window.location.href = "/":console.log("log in failed");
-        cookies.set('loggedIn','logged in',{path:'/'});
+        if(data.message==="successful login"){
+            window.location.href = "/";
+            cookies.set('loggedIn','logged in',{path:'/'});
+        }
+        else{
+            this.setState({err:data.message,open:true});
+            console.log("login failed");
+        }
     })
     .catch(err => console.log("error:",err))
 }
+
+useStyles = makeStyles((theme) => ({
+    root: {
+      width: '100%',
+      '& > * + *': {
+        marginTop: theme.spacing(2),
+      },
+    },
+  }));
+
+handleClick = () => {
+    this.setState({open:true});
+  };
+
+handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    this.setState({open:false});;
+  };
 
 
 
@@ -56,6 +92,11 @@ render(){
                 Don't have an account? <Link to='/signup'>Register</Link>
             </div>
         </div>
+        <Snackbar open={this.state.open} autoHideDuration={5000} onClose={this.handleClose}>
+                <Alert onClose={this.handleClose} severity="error">
+                  {this.state.err}
+                </Alert>
+        </Snackbar>
         </>
 
         );
