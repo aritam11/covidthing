@@ -2,6 +2,8 @@ const express =require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const {Auth, LoginCredentials} = require('two-step-auth');
+const dotenv =require('dotenv');
+dotenv.config();
 const app = express();
 
 
@@ -13,7 +15,7 @@ app.listen(3000, ()=>{
 })
 
 
-mongoose.connect('mongodb+srv://aritam:Cirkular@cluster0.c6ws0.mongodb.net/test',{
+mongoose.connect(process.env.DB,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
