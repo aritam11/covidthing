@@ -46,11 +46,12 @@ onSubmitClick = () =>{
     .then(data => {
         if(data.message==="successful login"){
             window.location.href = "/";
-            cookies.set('loggedIn','logged in',{path:'/'});
+            cookies.set('loggedIn',true,{path:'/'});
         }
         else{
             this.setState({err:data.message,open:true});
             console.log("login failed");
+            cookies.set('loggedIn',false,{path:'/'});
         }
     })
     .catch(err => console.log("error:",err))

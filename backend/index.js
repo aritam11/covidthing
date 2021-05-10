@@ -12,7 +12,8 @@ app.listen(3000, ()=>{
     console.log("connected to server");
 })
 
-mongoose.connect('mongodb://localhost:27017/coviddb',{
+
+mongoose.connect('mongodb+srv://aritam:Cirkular@cluster0.c6ws0.mongodb.net/test',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
@@ -43,6 +44,7 @@ async function login(emailId){
 
 
 app.post('/signup',async(req,res)=>{
+    console.log(req.body);
     users.findOne({email:VerifyEmail})
     .then(useremail =>{
         console.log(useremail)
@@ -54,7 +56,7 @@ app.post('/signup',async(req,res)=>{
         var data = {...req.body,verified:false}
         login(req.body.email);
     
-        users.insertOne(data,(err,collection)=>{
+        users.insertOne(data,(err)=>{
                     if(err){
                         throw err;
                     }
@@ -96,7 +98,6 @@ app.post('/verify',async(req,res)=>{
 
 
 app.post("/login",async(req,res)=>{
-        console.log(req.body);
         var email = req.body.email;
         var pass = req.body.pass;
         users.findOne({email:email})

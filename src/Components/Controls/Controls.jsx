@@ -1,13 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import './Controls.css'
 import {Link} from 'react-router-dom'
+import Cookies from 'universal-cookie';
 
 
+const cookies = new Cookies();
 
 const Controls = (props) =>{
 
     const [rng, setRng] = useState(50+"km");
+    const [loggedIn,setLoggedIn] = useState(false);
 
+    useEffect(()=>{
+
+        if(cookies.get('loggedIn')){
+          console.log(cookies.get('loggedIn'));
+          setLoggedIn(true);
+        }
+        else{
+          console.log("Not logged in")
+        }
+        
+      },[]);
+
+    const loggedInChange = (loggedIn) =>{
+        if(loggedIn){
+            return (
+                <>
+                <Link to='/profile'>
+                    <div>
+                        Profile
+                    </div>
+                </Link>
+                    <div onClick ={()=>{setLoggedIn(false)}} id = "logOut">
+                        log out
+                    </div>
+                </>
+            );
+        }
+        else{
+            return (
+                <Link to='/login'>
+                    <div>
+                        Log in
+                    </div>
+                </Link>
+            );
+        }
+    }
     
 
     const rangeVal = (event) =>{
@@ -42,11 +82,9 @@ const Controls = (props) =>{
             </div>
             </div>
             <div id="cr-li">
-                <Link to='/login'>
-                    <div>
-                        Log in
-                    </div>
-                </Link>
+                {
+                    loggedInChange(loggedIn)
+                }
                 <Link to='/createRequest'>
                     <div>
                         <button id="cr">

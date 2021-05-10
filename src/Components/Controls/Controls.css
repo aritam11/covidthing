@@ -66,3 +66,12 @@ input#range:hover {
   border-radius: 1.5rem;
   transition: all 0.2s;
 }
+
+#logOut{
+  text-decoration: underline;
+}
+
+#logOut:hover{
+  cursor: pointer;
+  color: rgb(101, 101, 245);
+}
