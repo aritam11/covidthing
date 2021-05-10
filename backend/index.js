@@ -43,11 +43,10 @@ async function login(emailId){
 
 
 app.post('/signup',async(req,res)=>{
-    console.log(req.body);
-    var email = req.body.email;
     users.findOne({email:VerifyEmail})
     .then(useremail =>{
-        if(!useremail){
+        console.log(useremail)
+        if(useremail){
             throw new Error('user already exists')
         }
     })
