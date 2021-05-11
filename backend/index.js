@@ -4,11 +4,13 @@ const cors = require('cors');
 const {Auth, LoginCredentials} = require('two-step-auth');
 const dotenv =require('dotenv');
 dotenv.config();
+const requestRouter = require('./routes/request');
 const app = express();
 
 
 app.use(express.json())
-app.use(cors())
+app.use(cors());
+app.use('/newrequest',requestRouter);
 
 app.listen(3000, ()=>{
     console.log("connected to server");
