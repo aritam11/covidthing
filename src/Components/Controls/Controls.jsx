@@ -12,13 +12,14 @@ const Controls = (props) =>{
     const [loggedIn,setLoggedIn] = useState(false);
 
     useEffect(()=>{
-
-        if(cookies.get('loggedIn')){
-          console.log(cookies.get('loggedIn'));
-          setLoggedIn(true);
+        if(cookies.get('loggedIn')==='true'){
+          console.log('cookie in',cookies.get('loggedIn'));
+          setLoggedIn('state',true);
         }
         else{
-          console.log("Not logged in")
+          console.log("Not logged in");
+          setLoggedIn(false);
+          cookies.set('loggedIn',false,{path:'/'})
         }
         
       },[]);
@@ -32,7 +33,7 @@ const Controls = (props) =>{
                         Profile
                     </div>
                 </Link>
-                    <div onClick ={()=>{setLoggedIn(false)}} id = "logOut">
+                    <div onClick ={()=>{setLoggedIn(false);cookies.set('loggedIn',false,{path:'/'});console.log('cookie out',cookies.get('loggedIn'))}} id = "logOut">
                         log out
                     </div>
                 </>
@@ -56,7 +57,7 @@ const Controls = (props) =>{
     }
 
     useEffect(() =>{
-        if(rng == "105km"){
+        if(rng === "105km"){
             setRng("All India")
         }
     },[rng])

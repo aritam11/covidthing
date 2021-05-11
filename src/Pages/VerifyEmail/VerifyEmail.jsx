@@ -59,8 +59,10 @@ const VerifyEmail = () =>{
         .then(data => {
             console.log(data)
             if(data.message==='successful verification'){
-                cookies.set('loggedIn','true');
-                window.location.replace('/covidthing');
+              cookies.get('loggedIn');
+                cookies.set('loggedIn',true,{path:'/'});
+                cookies.get('loggedIn');
+                window.location.href = '/';
             }
             else{
                 setOpen(true);
