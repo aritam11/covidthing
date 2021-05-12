@@ -45,8 +45,11 @@ onSubmitClick = () =>{
     .then(response => response.json())
     .then(data => {
         if(data.message==="successful login"){
+           var emailId = document.getElementById('emailInp')  
             window.location.href = "/";
             cookies.set('loggedIn',true,{path:'/'});
+            // cookies.set('email', emailId);
+            // console.log(cookies.get('email'))
         }
         else{
             this.setState({err:data.message,open:true});
