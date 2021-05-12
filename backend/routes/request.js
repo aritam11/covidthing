@@ -16,5 +16,6 @@ router.get('/medicines',(req,res)=>{
     console.log("med req");
     res.send({message:'MED'});
 });
-
+//test comm
+//test commm
 module.exports = router;
