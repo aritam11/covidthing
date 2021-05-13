@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie/es6';
 import './VerifyEmail.css'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
 const cookies = new Cookies(); 
 
@@ -11,14 +11,14 @@ function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
   
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      '& > * + *': {
-        marginTop: theme.spacing(2),
-      },
-    },
-  }));
+  // const useStyles = makeStyles((theme) => ({
+  //   root: {
+  //     width: '100%',
+  //     '& > * + *': {
+  //       marginTop: theme.spacing(2),
+  //     },
+  //   },
+  // }));
 
 
 
