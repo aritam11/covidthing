@@ -1,6 +1,6 @@
 {
   "name": "covid-app",
-  "homepage": "https://aritam11.github.io/covidthing",
+  
   "version": "0.1.0",
   "private": true,
   "dependencies": {

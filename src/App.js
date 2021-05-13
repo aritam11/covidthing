@@ -13,7 +13,7 @@ function App() {
   
   return (
     <div className="App">
-          <Router basename={basename || 'covidthing'}>
+          <Router>
             <Route path="/" exact component={Dashboard}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/login" component={LogIn}/>
