@@ -3,12 +3,10 @@ import SignUp from './Pages/SignUp/SignUp'
 import LogIn from './Pages/LogIn/LogIn'
 import  VerifyEmail from './Pages/VerifyEmail/VerifyEmail'
 import Dashboard from './Pages/Dashboard/Dashboard'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import CreateReq from './Pages/CreateReq/CreateReq';
 import Plasma from './Components/Forms/Plasma/Plasma';
-import { useEffect, useState } from 'react';
 
-const basename = "covidthing"
 function App() {
   
   return (

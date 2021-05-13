@@ -23,8 +23,6 @@ function Alert(props) {
 
 
 const VerifyEmail = () =>{
-
-    const classes = useStyles();
     const [open, setOpen] = React.useState(false);
 
     const [otp,setOtp] = useState('');
@@ -35,9 +33,9 @@ const VerifyEmail = () =>{
         setOtp(value);
     }
 
-    const handleClick = () => {
-        setOpen(true);
-      };
+    // const handleClick = () => {
+    //     setOpen(true);
+    //   };
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {

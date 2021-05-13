@@ -8,7 +8,6 @@ import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 
 const cookies = new Cookies();
-const cookie = new Cookies();
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -46,7 +45,7 @@ onSubmitClick = () =>{
     .then(response => response.json())
     .then(data => {
         if(data.message==="successful login"){
-           var emailId = document.getElementById('emailInp')  
+          //  var emailId = document.getElementById('emailInp')  
             window.location.href = "/";
             // cookies.set('email', emailId);
             cookies.set('loggedIn',true,{path:'/'});

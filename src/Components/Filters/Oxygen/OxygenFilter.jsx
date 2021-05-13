@@ -13,7 +13,7 @@ const OxygenFilter = () =>{
     }
 
     useEffect(() =>{
-        if(rng == "100 Litre"){
+        if(rng === "100 Litre"){
             setRng("More than 100 Litre")
         }
     },[rng])
