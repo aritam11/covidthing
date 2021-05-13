@@ -54,7 +54,7 @@ onSubmitClick = (e) =>{
    .then(response => response.json())
    .then(data =>{
        if(data.message==="successfull"){
-           window.location.replace('/covidthing/verify')
+           window.location.replace('/verify')
        }
        else{
         console.log(data);
